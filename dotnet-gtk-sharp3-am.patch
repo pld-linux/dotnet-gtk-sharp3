@@ -1,0 +1,11 @@
+--- gtk-sharp-2.99.0/configure.ac.orig	2012-10-14 16:17:32.000000000 +0200
++++ gtk-sharp-2.99.0/configure.ac	2013-06-21 18:37:16.842823990 +0200
+@@ -3,7 +3,7 @@
+ 
+ AM_INIT_AUTOMAKE([1.10 no-dist-gzip dist-bzip2 tar-ustar foreign])
+ AC_CANONICAL_HOST
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADER(config.h)
+ AM_MAINTAINER_MODE
+ 
+ API_VERSION=3.0.0.0
