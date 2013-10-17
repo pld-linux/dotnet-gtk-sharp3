@@ -2,13 +2,12 @@
 Summary:	.NET language bindings for GTK+ 3
 Summary(pl.UTF-8):	Wiązania GTK+ 3 dla .NET
 Name:		dotnet-gtk-sharp3
-Version:	2.99.0
+Version:	2.99.1
 Release:	1
 License:	LGPL v2
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-sharp/2.99/gtk-sharp-%{version}.tar.xz
-# Source0-md5:	4c2d4229c81c75e0dd6870fcbd9e48a6
-Patch0:		%{name}-am.patch
+# Source0-md5:	514fc5deb0e4b092206c0c69db6928a9
 URL:		http://www.mono-project.com/GtkSharp
 BuildRequires:	atk-devel
 BuildRequires:	autoconf >= 2.50
@@ -65,7 +64,6 @@ Biblioteki statyczne Gtk# 3.
 
 %prep
 %setup -q -n gtk-sharp-%{version}
-%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -98,6 +96,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libgiosharpglue-3.so
 %attr(755,root,root) %{_libdir}/libgtksharpglue-3.so
 %attr(755,root,root) %{_libdir}/libpangosharpglue-3.so
+%attr(755,root,root) %{_libdir}/libmono-profiler-gui-thread-check.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libmono-profiler-gui-thread-check.so.0
 # needed for DllImport on basename
 %{_libdir}/libatksharpglue-3.la
 %{_libdir}/libgiosharpglue-3.la
@@ -118,6 +118,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gapi3-codegen
 %attr(755,root,root) %{_bindir}/gapi3-fixup
 %attr(755,root,root) %{_bindir}/gapi3-parser
+%attr(755,root,root) %{_libdir}/libmono-profiler-gui-thread-check.so
+%{_libdir}/libmono-profiler-gui-thread-check.la
 %dir %{_prefix}/lib/gapi-3.0
 %attr(755,root,root) %{_prefix}/lib/gapi-3.0/gapi-fixup.exe
 %attr(755,root,root) %{_prefix}/lib/gapi-3.0/gapi-parser.exe
@@ -135,6 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/lib/mono/gtk-sharp-3.0/pango-sharp.dll
 %{_prefix}/lib/monodoc/sources/gtk-sharp-3-docs.*
 %dir %{_datadir}/gapi-3.0
+%{_datadir}/gapi-3.0/gapi.xsd
 %{_datadir}/gapi-3.0/atk-api.xml
 %{_datadir}/gapi-3.0/gdk-api.xml
 %{_datadir}/gapi-3.0/gio-api.xml
@@ -154,3 +157,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libgiosharpglue-3.a
 %{_libdir}/libgtksharpglue-3.a
 %{_libdir}/libpangosharpglue-3.a
+%{_libdir}/libmono-profiler-gui-thread-check.a
