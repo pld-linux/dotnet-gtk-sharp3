@@ -2,29 +2,33 @@
 Summary:	.NET language bindings for GTK+ 3
 Summary(pl.UTF-8):	Wiązania GTK+ 3 dla .NET
 Name:		dotnet-gtk-sharp3
-Version:	2.99.1
+Version:	2.99.2
 Release:	1
 License:	LGPL v2
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-sharp/2.99/gtk-sharp-%{version}.tar.xz
-# Source0-md5:	514fc5deb0e4b092206c0c69db6928a9
+# Source0-md5:	b1d1fb2b57091e7eda4551da05adbac4
 URL:		http://www.mono-project.com/GtkSharp
-BuildRequires:	atk-devel
+BuildRequires:	atk-devel >= 1:1.32.0
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	cairo-devel >= 1.10.0
+BuildRequires:	gdk-pixbuf2-devel >= 2.22.1
 BuildRequires:	glib2-devel >= 1:2.31
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	libtool
 BuildRequires:	mono-csharp >= 2.8
 BuildRequires:	monodoc >= 2.8
-BuildRequires:	pango-devel
+BuildRequires:	pango-devel >= 1:1.28.3
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(monoautodeps)
+Requires:	atk >= 1:1.32.0
 Requires:	cairo >= 1.10.0
+Requires:	gdk-pixbuf2 >= 2.22.1
 Requires:	glib2 >= 1:2.31
 Requires:	gtk+3 >= 3.0.0
 Requires:	mono >= 2.8
+Requires:	pango >= 1:1.28.3
 ExclusiveArch:	%{ix86} %{x8664} arm hppa ia64 ppc s390 s390x sparc sparcv9 sparc64
 ExcludeArch:	i386
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
