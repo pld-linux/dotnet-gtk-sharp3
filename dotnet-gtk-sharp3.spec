@@ -2,12 +2,12 @@
 Summary:	.NET language bindings for GTK+ 3
 Summary(pl.UTF-8):	Wiązania GTK+ 3 dla .NET
 Name:		dotnet-gtk-sharp3
-Version:	2.99.2
+Version:	2.99.3
 Release:	1
 License:	LGPL v2
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-sharp/2.99/gtk-sharp-%{version}.tar.xz
-# Source0-md5:	b1d1fb2b57091e7eda4551da05adbac4
+# Source0-md5:	2120ff15abe655e4de8aa5aadf0d5d12
 URL:		http://www.mono-project.com/GtkSharp
 BuildRequires:	atk-devel >= 1:1.32.0
 BuildRequires:	autoconf >= 2.50
@@ -149,6 +149,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gapi-3.0/gtk-api.xml
 %{_datadir}/gapi-3.0/pango-api.xml
 %{_pkgconfigdir}/gapi-3.0.pc
+%{_pkgconfigdir}/gdk-sharp-3.0.pc
 %{_pkgconfigdir}/gio-sharp-3.0.pc
 %{_pkgconfigdir}/glib-sharp-3.0.pc
 %{_pkgconfigdir}/gtk-dotnet-3.0.pc
