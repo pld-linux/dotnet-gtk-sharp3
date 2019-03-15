@@ -3,7 +3,7 @@ Summary:	.NET language bindings for GTK+ 3
 Summary(pl.UTF-8):	Wiązania GTK+ 3 dla .NET
 Name:		dotnet-gtk-sharp3
 Version:	2.99.3
-Release:	2
+Release:	3
 License:	LGPL v2
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-sharp/2.99/gtk-sharp-%{version}.tar.xz
