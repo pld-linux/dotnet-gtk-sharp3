@@ -1,34 +1,35 @@
 Summary:	.NET language bindings for GTK+ 3
 Summary(pl.UTF-8):	Wiązania GTK+ 3 dla .NET
 Name:		dotnet-gtk-sharp3
-Version:	2.99.3
-Release:	3
+Version:	3.22.6
+Release:	1
 License:	LGPL v2
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-sharp/2.99/gtk-sharp-%{version}.tar.xz
-# Source0-md5:	2120ff15abe655e4de8aa5aadf0d5d12
-URL:		http://www.mono-project.com/docs/gui/gtksharp/
+#Source0Download: https://github.com/openmedicus/gtk-sharp/releases
+Source0:	https://github.com/openmedicus/gtk-sharp/archive/gtk-sharp-%{version}.tar.gz
+# Source0-md5:	91a02af5bc5b5bfad7c899f32df80c0f
+URL:		https://github.com/openmedicus/gtk-sharp
 BuildRequires:	atk-devel >= 1:1.32.0
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.10
-BuildRequires:	cairo-devel >= 1.10.0
+BuildRequires:	cairo-devel >= 1.12.0
 BuildRequires:	gdk-pixbuf2-devel >= 2.22.1
-BuildRequires:	glib2-devel >= 1:2.31
+BuildRequires:	glib2-devel >= 1:2.32.0
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	libtool
-BuildRequires:	mono-csharp >= 2.8
-BuildRequires:	monodoc >= 2.8
+BuildRequires:	mono-csharp >= 3.2.8
+BuildRequires:	monodoc >= 3.2.8
 BuildRequires:	pango-devel >= 1:1.28.3
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(monoautodeps)
+BuildRequires:	rpmbuild(macros) >= 1.745
 Requires:	atk >= 1:1.32.0
-Requires:	cairo >= 1.10.0
+Requires:	cairo >= 1.12.0
 Requires:	gdk-pixbuf2 >= 2.22.1
-Requires:	glib2 >= 1:2.31
+Requires:	glib2 >= 1:2.32.0
 Requires:	gtk+3 >= 3.0.0
-Requires:	mono >= 2.8
+Requires:	mono >= 3.2.8
 Requires:	pango >= 1:1.28.3
-ExclusiveArch:	%{ix86} %{x8664} arm hppa ia64 ppc s390 s390x sparc sparcv9 sparc64
+ExclusiveArch:	%{ix86} %{x8664} %{arm} hppa ia64 ppc s390 s390x sparc sparcv9 sparc64
 ExcludeArch:	i386
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,7 +44,7 @@ Summary:	Development part of Gtk# 3
 Summary(pl.UTF-8):	Część dla programistów Gtk# 3
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	monodoc >= 2.8
+Requires:	monodoc >= 3.2.8
 
 %description devel
 Tools (C source parser and C# code generator) and documentation for
@@ -66,7 +67,7 @@ Static Gtk# 3 libraries.
 Biblioteki statyczne Gtk# 3.
 
 %prep
-%setup -q -n gtk-sharp-%{version}
+%setup -q -n gtk-sharp-gtk-sharp-%{version}
 
 %build
 %{__libtoolize}
@@ -143,6 +144,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/gapi-3.0
 %{_datadir}/gapi-3.0/gapi.xsd
 %{_datadir}/gapi-3.0/atk-api.xml
+%{_datadir}/gapi-3.0/cairo-api.xml
 %{_datadir}/gapi-3.0/gdk-api.xml
 %{_datadir}/gapi-3.0/gio-api.xml
 %{_datadir}/gapi-3.0/glib-api.xml
