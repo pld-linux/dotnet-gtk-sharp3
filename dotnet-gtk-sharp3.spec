@@ -2,7 +2,7 @@ Summary:	.NET language bindings for GTK+ 3
 Summary(pl.UTF-8):	Wiązania GTK+ 3 dla .NET
 Name:		dotnet-gtk-sharp3
 Version:	3.22.6
-Release:	1
+Release:	2
 License:	LGPL v2
 Group:		Libraries
 #Source0Download: https://github.com/openmedicus/gtk-sharp/releases
@@ -21,7 +21,7 @@ BuildRequires:	mono-csharp >= 3.2.8
 BuildRequires:	monodoc >= 3.2.8
 BuildRequires:	pango-devel >= 1:1.28.3
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.745
+BuildRequires:	rpmbuild(macros) >= 2.015
 Requires:	atk >= 1:1.32.0
 Requires:	cairo >= 1.12.0
 Requires:	gdk-pixbuf2 >= 2.22.1
